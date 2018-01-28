@@ -12,6 +12,8 @@
 		9121B977201CF6AC008C9EC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9121B975201CF6AC008C9EC4 /* Main.storyboard */; };
 		9121B979201CF6AC008C9EC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9121B978201CF6AC008C9EC4 /* Assets.xcassets */; };
 		9121B97C201CF6AC008C9EC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9121B97A201CF6AC008C9EC4 /* LaunchScreen.storyboard */; };
+		91C701BF201E221F00BB7CBD /* Concentration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C701BE201E221F00BB7CBD /* Concentration.swift */; };
+		91C701C1201E23C900BB7CBD /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C701C0201E23C900BB7CBD /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		9121B978201CF6AC008C9EC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9121B97B201CF6AC008C9EC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9121B97D201CF6AC008C9EC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91C701BE201E221F00BB7CBD /* Concentration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concentration.swift; sourceTree = "<group>"; };
+		91C701C0201E23C900BB7CBD /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +42,8 @@
 		9121B965201CF6AB008C9EC4 = {
 			isa = PBXGroup;
 			children = (
+				91C701BE201E221F00BB7CBD /* Concentration.swift */,
+				91C701C0201E23C900BB7CBD /* Card.swift */,
 				9121B970201CF6AC008C9EC4 /* Idv1 */,
 				9121B96F201CF6AC008C9EC4 /* Products */,
 			);
@@ -146,6 +152,8 @@
 			files = (
 				9121B974201CF6AC008C9EC4 /* ViewController.swift in Sources */,
 				9121B972201CF6AC008C9EC4 /* AppDelegate.swift in Sources */,
+				91C701BF201E221F00BB7CBD /* Concentration.swift in Sources */,
+				91C701C1201E23C900BB7CBD /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
