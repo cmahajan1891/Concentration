@@ -10,10 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet var cardButtons: [UIButton]!
-    lazy var game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1)/2)
+    @IBOutlet private var cardButtons: [UIButton]!
+    private lazy var game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
     
-    var flipCount = 0 {
+    var numberOfPairsOfCards: Int {
+        return (cardButtons.count + 1)/2
+    }
+    
+    private var flipCount = 0 {
         didSet {
             flipCountLabel.text = "Flips: \(flipCount)"
         }
@@ -21,9 +25,9 @@ class ViewController: UIViewController {
     
     
 
-    @IBOutlet weak var flipCountLabel: UILabel!
+    @IBOutlet private weak var flipCountLabel: UILabel!
     
-    @IBAction func touchCard(_ sender: UIButton) {
+    @IBAction private func touchCard(_ sender: UIButton) {
         flipCount += 1
         if let cardNumber = cardButtons.index(of: sender) {
             game.chooseCard(at: cardNumber)
@@ -33,7 +37,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func updateViewFromModel() {
+    private func updateViewFromModel() {
         for index in cardButtons.indices {
             let button = cardButtons[index]
             let card = game.cards[index]
@@ -47,16 +51,26 @@ class ViewController: UIViewController {
         }
     }
     
-    var emojiChoices : Array<String> = ["👻","⌚️","🌂","🎩", "🧤", "🧦", "🦋", "🐝", "🏀", "🍿"]
-    var emoji = [Int:String]()
+    private var emojiChoices : Array<String> = ["👻","⌚️","🌂","🎩", "🧤", "🧦", "🦋", "🐝", "🏀", "🍿"]
+    private var emoji = [Int:String]()
     
-    func emoji(for card: Card) -> String {
+    private func emoji(for card: Card) -> String {
         if emoji[card.identifier] == nil, emojiChoices.count > 0 {
-            let randomIndex = Int(arc4random_uniform(UInt32(emojiChoices.count)))
-            emoji[card.identifier] = emojiChoices.remove(at: randomIndex)
+            emoji[card.identifier] = emojiChoices.remove(at: emojiChoices.count.arc4Rand)
         }
         return emoji[card.identifier] ?? "?"
     }
 
 }
 
+extension Int {
+    var arc4Rand: Int {
+        if self > 0 {
+            return Int(arc4random_uniform(UInt32(self)))
+        }else if self < 0 {
+            return -Int(arc4random_uniform(UInt32(abs(self))))
+        }else {
+            return 0
+        }
+    }
+}
